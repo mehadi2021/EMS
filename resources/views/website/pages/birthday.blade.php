@@ -1,0 +1,141 @@
+@extends('website.master')
+
+@section('content')
+
+
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+  text-align:center;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 350px;
+  height: 310px;
+  top:10px;
+}
+
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 10px 10px;
+  float: left;
+  width: 24.99999%;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div.center{
+    text-align:center;
+  }
+
+</style>
+
+
+<h2 style="text-align:center; color:white; font-size:40px"><span>Welcome to Birthday Party</span></h2>
+<br><br>
+
+<div class="center">
+  <video src="{{url('/Media/video/birthday.mp4')}}" width="1020" controls></video>
+</div>
+
+<br>
+
+<h4 style="text-align:center; color:white; font-size:35px"><span>The birthday you're so very looking forward to...</span></h4>
+
+<h4 style="text-align:center; color:white; font-size:20px"><span>We have affiliation with the best this industry has to offer from photo shoots, floral arrangements, ambience decorations and entertainment we have all the right people standing next to us. So leave all your worry with us, because we will host it your way! A hearty memorable experience for you and your guests, with only delightful surprises.</span></h4>
+
+<br><br>
+
+
+<div class="responsive">
+  <div class="gallery" >
+    <a target="_blank" href="img_5terre.jpg">
+      <img src="{{url('/Frontend/images/birthday theme decoration.jpg')}}" alt="Marriage Couple" width="600" height="400">
+    </a>
+    <a href="" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true">Theme Decoration</a>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_forest.jpg">
+      <img src="{{url('/Frontend/images/birthday cake.jpg')}}" alt="Birthday" width="600" height="400">
+    </a>
+    <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cake</a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_lights.jpg">
+      <img src="{{url('/Frontend/images/Mascot character.jpg')}}" alt="Office Events" width="600" height="400">
+    </a>
+    <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Mascot Character</a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_mountains.jpg">
+      <img src="{{url('/Frontend/images/kids ride 1.jpg')}}" alt="Tour Image" width="600" height="400">
+    </a>
+    <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Kids Ride</a>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_mountains.jpg">
+      <img src="{{url('/Frontend/images/magician 1.png')}}" alt="Tour Image" width="600" height="400">
+    </a>
+    <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Magician</a>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<!-- <div style="padding:6px;">
+  <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
+  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+</div> -->
+
+</body>
+</html>
+
+
+
+
+@endsection
