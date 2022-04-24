@@ -21,10 +21,17 @@ body {
                         <div class="billed"><span class="font-weight-bold text-uppercase">User name</span><span class="ml-1">{{$user->name}}</span></div>
                         <!-- <div class="billed"><span class="font-weight-bold text-uppercase">Date:</span><span class="ml-1">May 13, 2020</span></div> -->
                         <div class="billed"><span class="font-weight-bold text-uppercase">User email</span><span class="ml-1">{{$user->email}}</span></div>
-                        <div class="billed"><span class="font-weight-bold text-uppercase">Generated at</span><span class="ml-1">{{$user->created_at}}</span></div>
+
+
+                          <div class="billed"><span class="font-weight-bold text-uppercase">Generated at</span><span class="ml-1">{{$user->created_at}}</span>
+                        </div>
+ @foreach($books as $bk)
+   <div class="billed"><span class="font-weight-bold text-uppercase">Generated at</span><span class="ml-1"></span></div>
+
+@endforeach
                     </div>
                     <div class="col-md-6 text-right mt-3">
-                        <h4 class="text-danger mb-0">TheTaj</h4><span>Event Management System</span>
+                        <h4 class="text-danger mb-0">Novus</h4><span>Event Management System</span>
                     </div>
                 </div>
                 <div class="mt-3">
@@ -39,7 +46,7 @@ body {
                                 </tr>
                             </thead>
                             <tbody>
-                            
+
                                 @php $total = 0; @endphp
                                 @foreach($details as $detail)
                                 <tr>
@@ -47,8 +54,8 @@ body {
                                     <td>{{$detail->quantity}}</td>
                                     <td>{{$detail->unit_price}}</td>
                                     <td>{{$detail->sub_total}}</td>
-                                @php 
-                                    $total = $detail->sub_total + $total; 
+                                @php
+                                    $total = $detail->sub_total + $total;
                                 @endphp
 
                                 </tr>
@@ -61,13 +68,13 @@ body {
                         </table>
                     </div>
                 </div>
-                
-                
+
+
             </div>
         </div>
     </div>
 
-    
+
 </div>
 
 
@@ -81,9 +88,9 @@ body {
 <div style="padding-left: 404px;"><a href="#" class="btn btn-warning" onclick="printDiv('printableArea')">Print</a></div>
 
              <div style="padding-right: 404px;"><a  class="btn btn-primary" href={{route('website.pages.payment',$details[0]->order_id)}}>Advance Payment</a></div>
-                
+
 </div>
-                
+
 
 
 

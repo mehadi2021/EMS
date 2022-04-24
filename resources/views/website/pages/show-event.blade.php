@@ -37,7 +37,7 @@ div.desc {
 @media only screen and (max-width: 500px) {
   .responsive {
     width: 100%;
-    
+
   }
 }
 .clearfix:after {
@@ -52,7 +52,7 @@ div.desc {
 <br><br>
 
 <head>
-   
+
 		<!-- <JavaScript Bundle with Popper> -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
@@ -65,14 +65,16 @@ div.desc {
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        
-  
+
+
         <p class="card-text" style="color:black; font-size:20px">Event Name: {{$list->name }}</p>
         <p class="card-text" style="color:black; font-size:20px">Event Details: {{$list->description}}</p>
         <!-- <p class="card-text" style="color:black; font-size:20px">Number of guest: {{$list->guest}}</p>
         <p class="card-text" style="color:black; font-size:20px">Price: {{$list->price}}</p> -->
 
         <p><a href="{{route('eventWiseService',$list->id)}}" class="btn btn-primary">View Services</a></p>
+        <p>   <a href="{{route('budget.info',$list->id) }}" class="btn btn-primary">Budget Resarvation</a></p>
+             <p> <a href="{{route('team.info',$list->id) }}" class="btn btn-primary">Worker View</a></p>
         <p class="card-text"><small class="text-muted"></small></p>
       </div>
     </div>

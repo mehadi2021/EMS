@@ -87,7 +87,7 @@ div.desc {
         <td >{{$list['name']}}</td>
         <td>
       <form action="{{route('updateCart')}}" method="post">
-        @csrf 
+        @csrf
         <input type="hidden" value="{{$key}}" name="cart_id">
         <input type="number" value="{{$list['quantity']}}" name='quantity' min="1" oninput="this.value = Math.abs(this.value)">
         <button class="btn btn-primary" style=" margin-left: 70px; height: 35px"
@@ -98,7 +98,7 @@ div.desc {
         </td>
         <td>{{$list['unit_price']}}</td>
         <td>{{$list['unit_price'] * $list['quantity']}}</td>
-        <td><a href="{{route('cart.clear',$key)}}">Delete</a></td>  
+        <td><a href="{{route('cart.clear',$key)}}">Delete</a></td>
     </tr>
 
     @php

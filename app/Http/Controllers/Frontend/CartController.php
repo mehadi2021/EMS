@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Order;
+use App\Models\Booking;
 use App\Models\OrderDetail;
 
 class CartController extends Controller
@@ -24,7 +25,7 @@ class CartController extends Controller
 
             $cart[ $service->id]['quantity']++;
             $cart[ $service->id]['total_price'] = ((int)$cart[$service->id]['quantity'] * (float)$cart[$service->id]['unit_price']);
-            
+
         } else {
             $cart[$service->id] = [
                 'service_id' => $service->id,
@@ -59,16 +60,16 @@ class CartController extends Controller
     }
 
     // public function updateCart(Request $request){
-        
+
     //     dd ($request->all());
     // }
 
     public function checkout()
     {
-       
+
         $cart = \session()->get('cart');
 
-        if($cart){ 
+        if($cart){
             $order=Order::create([
                 'user_id'=>auth()->user()->id,
                 'total_price'=>array_sum(array_column($cart, 'total_price')),
@@ -78,7 +79,7 @@ class CartController extends Controller
         //insert details into order details table
         foreach ($cart as $cart){
             OrderDetail::create([
-                'order_id'=>$order->id, 
+                'order_id'=>$order->id,
                 'service_id'=>$cart['service_id'],
                 'quantity'=>$cart['quantity'],
                 'unit_price'=>$cart['unit_price'],
@@ -86,13 +87,13 @@ class CartController extends Controller
             ]);
         }
 
-        session()->forget('cart'); 
+        session()->forget('cart');
         return redirect()->back()->with('message','Order Placed Successfully.');
         // return view('admin.layout.invoice');
-        
+
     }
 
-       return redirect()->back()->with('message', 'No Data Found'); 
+       return redirect()->back()->with('message', 'No Data Found');
     }
 
 
@@ -101,7 +102,7 @@ class CartController extends Controller
         $carts = session('cart');
         unset($carts[$id]);
         session()->put('cart',$carts);
-        return redirect()->back()->with('message', 'cart deleted'); 
+        return redirect()->back()->with('message', 'cart deleted');
     }
 
 }

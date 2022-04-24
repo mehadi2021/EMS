@@ -19,7 +19,7 @@ body {
                         <div class="billed"><span class="font-weight-bold text-uppercase">Generated at</span><span class="ml-1">{{$user->created_at}}</span></div>
                     </div>
                     <div class="col-md-6 text-right mt-3">
-                        <h4 class="text-danger mb-0">TheTaj</h4><span>Event Management System</span>
+                        <h4 class="text-danger mb-0">Novus</h4><span>Event Management System</span>
                     </div>
                 </div>
                 <div class="mt-3">
@@ -41,8 +41,8 @@ body {
                                     <td>{{$detail->quantity}}</td>
                                     <td>{{$detail->unit_price}}</td>
                                     <td>{{$detail->sub_total}}</td>
-                                @php 
-                                    $total = $detail->sub_total + $total; 
+                                @php
+                                    $total = $detail->sub_total + $total;
                                 @endphp
 
                                 </tr>
@@ -55,11 +55,11 @@ body {
                         </table>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
 </div>
 </div>

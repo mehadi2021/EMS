@@ -20,41 +20,49 @@
 <br><br>
 
 
-    
-		
+
+
 
 <h5 class="card-title">Services</h5>
 @foreach($services as $list)
 
 
 <h5 class="card-title" style="fornt-size:50px;padding:10px">Event :: {{$list->event->name}}</h5>
-<div class="card mb-3"  style="max-width: 1400px; max-height: 420px; padding:10px; margin-left:60px;">
+<div class="card mb-3"  style="max-width: 1400px; max-height: 600px; padding:10px; margin-left:60px;">
   <div class="row g-0">
-    <div class="col-md-4">
-    <img src="{{url('uploads/'.$list->image)}}" class="img-fluid rounded-start" alt="...">
-    </div>
     <div class="col-md-8">
-      <div class="card-body">
-        
-  
+    <img src="{{url('uploads/'.$list->image)}}" class="img-fluid rounded-start" alt="..." style="height:350px;width:850px;padding-right:20px;">
+
+
+    </div>
+    <div class="col-md-4">
+
+      {{-- <div class="card-body" style="padding:80px;"> --}}
+
+
         <p class="card-text" style="color:black; font-size:20px">Service Name: {{$list->name }}</p>
         <p class="card-text" style="color:black; font-size:20px">Service Details: {{$list->description}}</p>
         <p class="card-text" style="color:black; font-size:20px">Service Price: {{$list->price}}</p>
         <p class="card-text" style="color:black; font-size:20px">Service Status: {{$list->status}}</p>
-        
+
+
+
+
+
+
         @if(Auth::check())
-        <p><a href="{{route('addToCart',$list->id)}}" class="btn btn-primary">AddToCart</a></p>
+       {{-- <a href="{{route('addToCart',$list->id)}}" class="btn btn-primary">Booking</a> --}}
+          <a href="{{route('budget.info',$list->event_id)}}" class="btn btn-primary">Booking</a>
         @else
+
         <p>
-        <h3 style="color:red; font-weight:bold">Please login to add this service in your cart</h3>
-        </p>
+        <h3 style="color:red; font-weight:bold">Please login to add this service in your booking list</h3>
         @endif
         <p class="card-text"><small class="text-muted"></small></p>
-       
+
       </div>
     </div>
   </div>
-</div>le>
 div.gallery {
   border: 1px solid #ccc;
   text-align:center;

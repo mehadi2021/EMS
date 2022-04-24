@@ -9,7 +9,7 @@
         margin-bottom:100px;
 
     }
-   
+
 </style>
 
 <head>
@@ -32,7 +32,7 @@
 <div class="container" style="margin-bottom: 100px;">
 <h1 style="color:white; padding-bottom: 30px; font-size: 35px; text-align:center;" >Your Order</h1>
 
-   
+
 
 <table class="table">
 <thead>
@@ -41,7 +41,7 @@
     <th scope="col" style="color:white; font-size: 20px;" >User Id</th>
     <th scope="col" style="color:white; font-size: 20px;" >Total Price</th>
     <th scope="col" style="color:white; font-size: 20px;" >Action</th>
-    
+
 </tr>
 </thead>
 <tbody>
@@ -54,13 +54,13 @@
     <td style="color:white; font-size: 20px;" >{{$list->user_id}}</td>
 
     <td style="color:white; font-size: 20px;" >{{$list->total_price}}</td>
-  
+
     <td>
     <a class="btn btn-primary" href="{{route('orderView',$list->id)}}">View</a>
     </td>
 
-    
-    
+
+
 </tr>
     @endforeach
 </tbody>

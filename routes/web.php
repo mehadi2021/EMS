@@ -24,6 +24,7 @@ use App\Http\Controllers\frontend\ContactUsController;
 use App\Http\Controllers\frontend\SpeicalController;
 use App\Http\Controllers\frontend\AboutUsController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\frontend\BookingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,6 +61,7 @@ Route::get('/events/special-event',[PagesController::class,'special-event'])->na
 ');
 
 Route::get('/events-wise-service/{id}',[PagesController::class,'eventWiseService'])->name('eventWiseService');
+Route::get('/events-wise-service/2/worker view',[TeamController::class,'team_list'])->name('user.team.list');
 
 
 //Contact Us
@@ -77,13 +79,22 @@ Route::get('/about-us',[AboutUsController::class,'create'])->name('frontend.abou
 Route::get('/auth()-user()-name',[UserController::class,'view'])->name('frontend.profile');
 
 //Show Service
- 
-Route::get('/showservice',[ShowServiceController::class,'view'])->name('frontend.');
 
+Route::get('/showservice',[ShowServiceController::class,'view'])->name('frontend.');
+Route::get('/showservice/worker view/{id}',[BookingController::class,'team'])->name('team.info');
+Route::get('/showservice/booking/cbooking',[BookingController::class,'confirm_booking'])->name('booking.c_booking');
+Route::get('/showservice/dgetbudget resarvation/{id}',[BookingController::class,'budget'])->name('budget.info');
+Route::post('/showservice/dgetbudget resarvation',[BookingController::class,'store'])->name('budget.store');
 //payment
 Route::get('/payment/{id}',[PaymentController::class,'payment'])->name('website.pages.payment');
 Route::post('/payment',[PaymentController::class,'store'])->name('payment.store');
-Route::get('/payment list',[PaymentController::class,'view'])->name('payment.list'); 
+Route::get('/payment list',[PaymentController::class,'view'])->name('payment.list');
+
+Route::get('/booking list/{$di}',[BookingController::class,'booking_list'])->name('booking.list');
+
+
+
+
 
 
 //**************************************************************************************/
@@ -158,6 +169,7 @@ Route::get('/checkout',[CartController::class,'checkout'])->name('cart.checkout'
 
 //order view
 Route::get('/order',[OrderController::class,'OrderView'])->name('cart.order.view');
+Route::get('/booking info',[OrderController::class,'BookingInfo'])->name('booking.info');
 Route::get('/order/view/{id}',[InvoiceController::class,'orderDetails'])->name('order.view');
 
 //invoice
@@ -166,13 +178,12 @@ Route::get('/invoice', [InvoiceController::class,'invoice'])->name('admin.invoic
 
 Route::get('/create/image',[ImageController::class,'create'])->name('admin.create-gallery');
 Route::post('/image/store',[ImageController::class,'store'])->name('admin.image.store');
-Route::get('/image',[ImageController::class,'image'])->name('admin.image.list');    
+Route::get('/image',[ImageController::class,'image'])->name('admin.image.list');
 });
 
 //orderDetails
-Route::get('/orderview/{id}',[UserController::class,'orderDetails'])->name('orderView');    
+Route::get('/orderview/{id}',[UserController::class,'orderDetails'])->name('orderView');
 
 //Report
-Route::get('/report',[ReportController::class,'report'])->name('reportView');  
-Route::get('/report/search',[ReportController::class,'reportsearch'])->name('reportsearch');  
-
+Route::get('/report',[ReportController::class,'report'])->name('reportView');
+Route::get('/report/search',[ReportController::class,'reportsearch'])->name('reportsearch');

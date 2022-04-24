@@ -31,8 +31,8 @@
             <h3>Contact Info</h3>
             <a href="#" style="text-decoration: none;"> <i class="fas fa-phone"></i> +8801685609628 </a>
             <a href="#" style="text-decoration: none;"> <i class="fas fa-phone"></i> +8801839741579 </a>
-            <a href="#" style="text-decoration: none;"> <i class="fas fa-envelope"></i> khtajuddin@gmail.com </a>
-            <a href="#" style="text-decoration: none;"> <i class="fas fa-envelope"></i> thetaj@gmail.com </a>
+            <a href="#" style="text-decoration: none;"> <i class="fas fa-envelope"></i> Novus@gmail.com </a>
+            <a href="#" style="text-decoration: none;"> <i class="fas fa-envelope"></i>Novus@gmail.com </a>
             <a href="#" style="text-decoration: none;"> <i class="fas fa-map-marker-alt"></i> Sector-10,Uttara, Dhaka-1230 </a>
         </div>
 
@@ -46,7 +46,7 @@
 
     </div>
 
-    <div class="credit"> Created By <span>Khandoker Tajuddin ID#17203031</span> | All Rights Reserved </div>
+    <div class="credit"> Created By <span>Rashedul Islam ID#17203031</span> | All Rights Reserved </div>
 
 </section>
 

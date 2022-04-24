@@ -10,7 +10,8 @@ class ServiceController extends Controller
 {
     public function create()
     {
-        $events = Event::orderBy('id','desc')->get();
+         $events = Event::orderBy('id','desc')->get();
+
         return view ('admin.layout.service',compact('events'));
     }
 
@@ -24,17 +25,17 @@ class ServiceController extends Controller
         //    'image' =>'required',
         //     'guest'=>'required|min:100|max:1500',
         //    'price' =>'required',
-            
-          
+
+
         // ]);
 
 
 
        // dd($request->all());
          $filename="";
-       
 
-    
+
+
 
 
             if($request->hasFile('image'))
@@ -51,11 +52,11 @@ class ServiceController extends Controller
             'status'=>$request->status,
             'event_id'=>$request->event_id,
             'image'=>$filename
-            
-            
-            
-            
-            
+
+
+
+
+
 
         ]);
         return redirect()->back();
@@ -91,13 +92,13 @@ class ServiceController extends Controller
     {
 
         $filename="";
-         
-        
+
+
         // dd($request->all());
- 
-     
- 
- 
+
+
+
+
              if($request->hasFile('image'))
              {
                  $file= $request->file('image');

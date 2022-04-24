@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Order;
+
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -70,7 +71,8 @@ class UserController extends Controller
         $orders = Order::find($id);
         $user = User::find($orders->user_id);
         $details = OrderDetail::with('service')->where('order_id',$id)->get();
-        return view('website.pages.orderDetails',compact('user','details'));
+            $books=OrderDetail::with('booking')->where('service_id',$id)->get();
+        return view('website.pages.orderDetails',compact('user','details','books'));
     }
 
 }

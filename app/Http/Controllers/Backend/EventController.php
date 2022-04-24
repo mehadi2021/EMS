@@ -46,6 +46,7 @@ class EventController extends Controller
         Event::create([
             'name'=>$request->name,
             'description'=>$request->description,
+            'venue'=>$request->venue,
             'image'=>$filename
             
             
